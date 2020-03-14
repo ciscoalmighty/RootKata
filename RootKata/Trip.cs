@@ -1,38 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace RootKata
 {
-    class Trip
+    public class Trip
     {
-        private List<string> Split(string lineToSplit)
+        public static List<string> Split(string lineToSplit)
         {
             //split a line using " " as delimiter
             //TODO consider whether a Helper class should be created for methods like this (DRY)
-            return new List<string>();
+            List<string> finishedLine = lineToSplit.Split(" ").ToList();
+            return finishedLine;
         }
 
-        private double GetDuration(List<string> splitLine)
+        public static TimeSpan GetDuration(List<string> splitLine)
         {
             //end time - start time = total time
-            return 0;
+            DateTime startTime = Convert.ToDateTime(splitLine[2]);
+            DateTime endTime = Convert.ToDateTime(splitLine[3]);
+            TimeSpan totalTime = endTime - startTime;
+            return totalTime;
         }
 
-        private double GetMph(List<string> splitLine)
+        public static double GetMiles(List<string> splitLine)
         {
             //distance/time = mph
-            return 0;
+            double miles = Convert.ToDouble(splitLine[4]);
+            return miles;
+        }
+
+        public static double GetMph(List<string> splitLine)
+        {
+            //distance/time = mph
+            TimeSpan duration = GetDuration(splitLine);
+            double miles = GetMiles(splitLine);
+            double milesPerHour = miles / duration.TotalHours;
+            return milesPerHour;
         }
 
         public List<double> TripWork(string line)
         {
-            //calls all relevant methods within this class for outside use
-            //call Split
-            //call GetDuration
-            //call GetMph
-            //if mph is >100 || <5, disregard that trip
-            return new List<double>();
+            List<double> distanceAndSpeed = new List<double>();
+            List<String> result = new List<string>(Split(line));
+            //GetDuration(result);
+            double speed = GetMph(result);
+            
+            if (speed <100 || speed >5)
+            {
+                distanceAndSpeed.Add(GetMiles(result));
+                distanceAndSpeed.Add(speed);
+            }
+            return distanceAndSpeed;
         }
     }
 }
