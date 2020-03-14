@@ -4,7 +4,6 @@ C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\bin\Debug\netcoreapp3.1\R
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\bin\Debug\netcoreapp3.1\RootKata.runtimeconfig.dev.json
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\bin\Debug\netcoreapp3.1\RootKata.dll
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\bin\Debug\netcoreapp3.1\RootKata.pdb
-C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\obj\Debug\netcoreapp3.1\RootKata.csprojAssemblyReference.cache
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\obj\Debug\netcoreapp3.1\RootKata.AssemblyInfoInputs.cache
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\obj\Debug\netcoreapp3.1\RootKata.AssemblyInfo.cs
 C:\Users\JakeAdkins\Desktop\RootKata\RootKata\RootKata\obj\Debug\netcoreapp3.1\RootKata.dll

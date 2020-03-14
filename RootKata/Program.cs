@@ -5,8 +5,11 @@ using System.IO;
 
 namespace RootKata
 {
-    public static class RootKata
+    class Program
     {
-        
+        public static void Main(string[] args ) 
+        {
+            Console.WriteLine("hi");
+        }
     }
 }

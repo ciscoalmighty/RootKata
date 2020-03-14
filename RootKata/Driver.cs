@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RootKata
 {
-    class Driver
+    public class Driver
     {
-        private List<string> Split(string lineToSplit)
+        public static List<string> Split(string lineToSplit)
         {
             //split a line using " " as delimiter
-            return new List<string>();
+            List<string> finishedLine = lineToSplit.Split(" ").ToList();
+            return finishedLine;
         }
 
-        private string GetName(List<string> splitLine)
+        public static string GetName(List<string> splitLine)
         {
             //an element of the split line will be the Driver's name: this method returns that element
-            return "";
+            string name = splitLine[1];
+            return name;
         }
 
-        public string DriverWork(string line)
+        public static string DriverWork(string line)
         {
             //calls all relevant methods within this class for outside use
-            //call Split
-            //call GetName
-            return "";
+            string name = GetName(Split(line));
+            return name;
         }
     }
 }
