@@ -39,18 +39,31 @@ namespace RootKata
             double milesPerHour = miles / duration.TotalHours;
             return milesPerHour;
         }
-
-        public List<double> TripWork(string line)
+        public static string GetName(List<string> splitLine)
+        {
+            //an element of the split line will be the Driver's name: this method returns that element
+            string name = splitLine[1];
+            return name;
+        }
+        public static string GetName(string line)
+        {
+            return GetName(Split(line));
+        }
+        public static double Time(TimeSpan time)
+        {
+            return time.TotalMinutes/60;
+        }
+        public static List<double> TripWork(string line)
         {
             List<double> distanceAndSpeed = new List<double>();
             List<String> result = new List<string>(Split(line));
             //GetDuration(result);
             double speed = GetMph(result);
             
-            if (speed <100 || speed >5)
+            if (speed <100 && speed >5)
             {
                 distanceAndSpeed.Add(GetMiles(result));
-                distanceAndSpeed.Add(speed);
+                distanceAndSpeed.Add(Time(GetDuration(result)));
             }
             return distanceAndSpeed;
         }

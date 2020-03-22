@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RootKata": {
+      "commandName": "Project",
+      "commandLineArgs": "input.txt"
+    }
+  }
+}
